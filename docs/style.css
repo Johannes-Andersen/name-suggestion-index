@@ -559,3 +559,130 @@ tbody tr.warn.edit-error          td.type  { color: #c33; }
 #nav a {
   font-weight: normal;
 }
+
+
+/* Data Quality dashboard */
+.quality-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px 0 4px;
+}
+.quality-checks .check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #333;
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+.quality-checks .check:hover {
+  background: #eef;
+  border-color: #99b;
+}
+.quality-checks .check.active {
+  background: #7092ff;
+  color: #fff;
+  border-color: #5878d6;
+}
+.quality-checks .check.active:hover {
+  background: #5878d6;
+}
+.quality-checks .check.empty {
+  opacity: 0.45;
+}
+.quality-checks .check .count {
+  background: rgba(0,0,0,0.08);
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-variant-numeric: tabular-nums;
+  font-weight: bold;
+  font-size: 11px;
+}
+.quality-checks .check.active .count {
+  background: rgba(255,255,255,0.25);
+}
+.dark .quality-checks .check {
+  background: #393939;
+  color: #ddd;
+  border: 1px solid #555;
+}
+.dark .quality-checks .check:hover {
+  background: #464666;
+  border-color: #777;
+}
+.dark .quality-checks .check.active {
+  background: #5878d6;
+  border-color: #88c;
+}
+
+.warnings-summary .pager {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 16px;
+}
+.warnings-summary .pager button {
+  padding: 3px 10px;
+  font-size: 12px;
+}
+.warnings-summary .pager .pageinfo {
+  font-variant-numeric: tabular-nums;
+  color: #555;
+}
+.dark .warnings-summary .pager .pageinfo { color: #aaa; }
+
+table.summary.quality td.qname .name {
+  font-weight: bold;
+  font-size: 14px;
+}
+table.summary.quality td.qname .id code {
+  font-size: 11px;
+}
+table.summary.quality td.qid .missing {
+  color: #c33;
+  font-weight: bold;
+}
+.dark table.summary.quality td.qid .missing { color: #e88; }
+
+table.summary.quality td.actions {
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.badges .badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  background: #e0e6f2;
+  color: #334;
+  border: 1px solid transparent;
+}
+.dark .badges .badge {
+  background: #3a3a4a;
+  color: #cdd;
+}
+.badges .badge.emphasized {
+  background: #7092ff;
+  color: #fff;
+  font-weight: bold;
+}
+.badges .badge.missing-wikidata { background: #f7d3d3; color: #802424; }
+.badges .badge.dissolved        { background: #f5cccc; color: #802424; }
+.badges .badge.dissolved-without-successor { background: #f5cccc; color: #802424; }
+.badges .badge.has-replacement-suggestion  { background: #fde2b0; color: #6b4a14; }
+.dark .badges .badge.missing-wikidata,
+.dark .badges .badge.dissolved,
+.dark .badges .badge.dissolved-without-successor { background: #4d2727; color: #f5b8b8; }
+.dark .badges .badge.has-replacement-suggestion  { background: #4d3a1a; color: #f3d9a6; }

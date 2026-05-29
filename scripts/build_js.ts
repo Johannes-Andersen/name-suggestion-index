@@ -15,6 +15,13 @@ await Promise.all([
   }),
 
    Bun.build({
+    entrypoints: ['./nsiguide/quality-index.jsx'],
+    outdir: './dist/js',
+    sourcemap: 'linked',
+    naming: 'nsiguide-quality.[ext]'  // .js
+  }),
+
+   Bun.build({
     entrypoints: ['./src/index.ts'],
     outdir: './dist/js',
     target: 'browser',
